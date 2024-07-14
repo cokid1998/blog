@@ -1,6 +1,6 @@
 import { PostgrestResponse, PostgrestError } from "@supabase/supabase-js";
-import { PostsType } from "@/types/postType";
-import { createClient } from "@/utils/supabase/server";
+import { PostsType } from "@src/types/postType";
+import { createClient } from "@src/utils/supabase/server";
 
 const supabase = createClient();
 
