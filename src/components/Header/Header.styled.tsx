@@ -1,14 +1,17 @@
+import Link from "next/link";
 import tw from "tailwind-styled-components";
 
 export const HeaderContainer = tw.header`
   sticky
   top-0
-  w-full
+  backdrop-blur
   border-b
-  border-border/40
-  p-3
+  py-3
+  flex
+  items-center
+  justify-center
 `;
 
-export const Logo = tw.div`
+export const LogoLink = tw(Link)`
   text-5xl
 `;

@@ -22,7 +22,11 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className}>
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="flex justify-center items-center">
+          <div className="container flex justify-center items-center">
+            {children}
+          </div>
+        </main>
         <Footer />
       </body>
     </html>
