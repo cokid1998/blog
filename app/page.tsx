@@ -1,8 +1,14 @@
-import { createClient } from "@/utils/supabase/server";
+import { getPosts } from "@/utils/API/getPosts";
 
 export default async function Index() {
-  const supabase = createClient();
-  const { data: post } = await supabase.from("post").select();
+  const data = await getPosts();
 
-  return <div>content</div>;
+  if (!data) return null;
+
+  return (
+    <div>
+      <div>{data[0].title}</div>
+      <div>{data[0].content}</div>
+    </div>
+  );
 }
