@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@src/components/Header/Header";
 import Footer from "@src/components/Footer/Footer";
 import Sidebar from "@src/components/Sidebar/Sidebar";
+import { headers } from "next/headers";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
