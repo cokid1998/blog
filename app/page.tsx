@@ -6,7 +6,7 @@ export default async function Index() {
   if (!data) return null;
 
   return (
-    <div>
+    <div className="bg-red-500">
       <div>{data[0].title}</div>
       <div>{data[0].content}</div>
       <div>{data[0].title}</div>

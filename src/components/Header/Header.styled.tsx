@@ -10,8 +10,11 @@ export const HeaderContainer = tw.header`
   flex
   items-center
   justify-center
+  z-50
 `;
 
 export const LogoLink = tw(Link)`
   text-5xl
+  rounded-full
+  overflow-hidden
 `;

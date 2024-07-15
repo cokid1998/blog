@@ -2,6 +2,7 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Header from "@src/components/Header/Header";
 import Footer from "@src/components/Footer/Footer";
+import Sidebar from "@src/components/Sidebar/Sidebar";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -23,7 +24,8 @@ export default function RootLayout({
       <body>
         <Header />
         <main className="flex justify-center items-center">
-          <div className="container flex justify-center items-center">
+          <div className="container flex mt-[50px] gap-[30px]">
+            <Sidebar />
             {children}
           </div>
         </main>

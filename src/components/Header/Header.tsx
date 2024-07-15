@@ -12,13 +12,7 @@ export default function Header() {
     <HeaderContainer>
       <div className="container flex justify-between items-center">
         <LogoLink href={"/"}>
-          <Image
-            src={LogoImage}
-            alt="logo"
-            width={70}
-            height={70}
-            style={{ borderRadius: "50%" }}
-          />
+          <Image src={LogoImage} alt="logo" width={70} height={70} />
         </LogoLink>
         <Search />
         <Menus />

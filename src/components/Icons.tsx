@@ -6,9 +6,9 @@ export const Icons = {
         height="24"
         fill="none"
         stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         className="flex-none text-slate-300 dark:text-slate-400"
         aria-hidden="true"
       >
