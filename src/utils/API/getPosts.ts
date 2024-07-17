@@ -1,4 +1,4 @@
-import { PostgrestResponse, PostgrestError } from "@supabase/supabase-js";
+import { PostgrestResponse } from "@supabase/supabase-js";
 import { PostsType } from "@src/types/postType";
 import { createClient } from "@src/utils/supabase/server";
 

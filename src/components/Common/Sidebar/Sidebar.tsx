@@ -1,5 +1,5 @@
 "use client";
-import { SideBarContainer } from "@src/components/Sidebar/Sidebar.styled";
+import { SideBarContainer } from "@src/components/Common/Sidebar/Sidebar.styled";
 import { usePathname } from "next/navigation";
 
 const Sidebar = () => {

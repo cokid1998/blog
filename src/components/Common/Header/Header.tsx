@@ -1,11 +1,11 @@
+import Image from "next/image";
 import {
   HeaderContainer,
   LogoLink,
-} from "@src/components/Header/Header.styled";
-import Image from "next/image";
+} from "@src/components/Common/Header/Header.styled";
+import Search from "@src/components/Common/Header/Search/Search";
+import Menus from "@src/components/Common/Header/Menus/Menus";
 import LogoImage from "@public/logo.png";
-import Search from "@src/components/Header/Search/Search";
-import Menus from "@src/components/Header/Menus/Menus";
 
 export default function Header() {
   return (

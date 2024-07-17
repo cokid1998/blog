@@ -3,15 +3,14 @@ import MDEditor from "@uiw/react-md-editor";
 import { useState } from "react";
 import { Input } from "@src/components/ui/input";
 import { Button } from "@src/components/ui/button";
-import { createClient } from "@src/utils/supabase/client";
 import { useToast } from "@src/components/ui/use-toast";
 import { useRouter } from "next/navigation";
-const supabase = createClient();
+import { posting } from "@src/utils/API/posting";
 
 const edit = () => {
   const router = useRouter();
   const { toast } = useToast();
-  const [title, setTitle] = useState("제목을 입력해주세요");
+  const [title, setTitle] = useState("");
   const [content, setContent] = useState<string | undefined>("# Hello World");
 
   const onSubmit = async () => {
@@ -21,11 +20,7 @@ const edit = () => {
         description: "제목, 콘텐츠를 모두 작성해주세요.",
       });
     } else {
-      const { data, error, status } = await supabase
-        .from("post")
-        .insert([{ title, content }])
-        .select();
-
+      const { error, status } = await posting(title, content);
       if (error) {
         console.log(error);
         toast({
@@ -45,7 +40,8 @@ const edit = () => {
   return (
     <div className="w-full flex flex-col gap-4">
       <Input
-        value={!title ? "제목을 입력해주세요" : title}
+        value={title}
+        placeholder="제목을 입력해주세요"
         className="h-12 text-2xl"
         onChange={(e) => setTitle(e.target.value)}
       />
