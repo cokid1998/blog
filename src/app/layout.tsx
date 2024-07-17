@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "@src/components/Header/Header";
 import Footer from "@src/components/Footer/Footer";
 import Sidebar from "@src/components/Sidebar/Sidebar";
-import { headers } from "next/headers";
+import { Toaster } from "@src/components/ui/toaster";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -28,6 +28,7 @@ export default function RootLayout({
           <div className="container flex mt-[50px] gap-[30px]">
             <Sidebar />
             {children}
+            <Toaster />
           </div>
         </main>
         <Footer />

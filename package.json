@@ -6,6 +6,9 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.1",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
     "@uiw/react-md-editor": "^4.0.4",
