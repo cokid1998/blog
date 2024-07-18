@@ -10,5 +10,5 @@ export const getPosts = async () => {
     .select()
     .order("created_at", { ascending: false });
 
-  return data;
+  return data!;
 };

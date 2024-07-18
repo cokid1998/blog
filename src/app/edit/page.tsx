@@ -51,7 +51,7 @@ const edit = () => {
         onChange={setContent}
         minHeight={600}
       />
-      <Button onClick={onSubmit} className="bg-green-500">
+      <Button onClick={onSubmit} className="bg-green-500 hover:bg-green-400">
         등록
       </Button>
     </div>

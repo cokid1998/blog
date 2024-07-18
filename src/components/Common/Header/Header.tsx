@@ -14,7 +14,6 @@ export default function Header() {
         <LogoLink href={"/"}>
           <Image src={LogoImage} alt="logo" width={70} height={70} />
         </LogoLink>
-        <Search />
         <Menus />
       </div>
     </HeaderContainer>

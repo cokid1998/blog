@@ -1,25 +1,17 @@
 import React from "react";
 import { PostsType } from "@src/types/postType";
-import Image from "next/image";
-import DefaultImage from "@public/default-image.webp";
-import { PostContainer } from "@src/components/PostCard/PostCard.styled";
+
+import { PostContainer } from "@src/components/Post/PostItem/PostItem.styled";
 import dayjs from "dayjs";
 import { Badge } from "@src/components/ui/badge";
 
-interface PostCardProps {
+interface PostItemProps {
   post: PostsType;
 }
 
-function PostCard({ post }: PostCardProps) {
+function PostItem({ post }: PostItemProps) {
   return (
     <PostContainer href={"/"}>
-      <Image
-        src={DefaultImage}
-        alt="thumbnail"
-        width={250}
-        height={250}
-        style={{ borderRadius: "15px" }}
-      />
       <div className="flex flex-col justify-between">
         <span className="text-3xl font-medium">{post.title}</span>
         <span className="text-zinc-700 text-base ">{post.content}</span>
@@ -34,4 +26,4 @@ function PostCard({ post }: PostCardProps) {
   );
 }
 
-export default PostCard;
+export default PostItem;
