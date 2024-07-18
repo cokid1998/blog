@@ -1,9 +1,15 @@
 import React from "react";
 import { PostsType } from "@src/types/postType";
-
-import { PostContainer } from "@src/components/Post/PostItem/PostItem.styled";
 import dayjs from "dayjs";
 import { Badge } from "@src/components/ui/badge";
+import {
+  MotionLink,
+  MotionSpan,
+  PostTitleVariants,
+  PostContainerVariants,
+  PostTitleArrowVariants,
+} from "@src/components/Post/PostItem/PostItem.motion";
+import { ChevronRight } from "lucide-react";
 
 interface PostItemProps {
   post: PostsType;
@@ -11,18 +17,36 @@ interface PostItemProps {
 
 function PostItem({ post }: PostItemProps) {
   return (
-    <PostContainer href={"/"}>
+    <MotionLink
+      href={"/"}
+      className="flex gap-10 rounded-xl p-4"
+      initial="init"
+      whileHover="hover"
+      variants={PostContainerVariants}
+      whileTap={{ scale: 0.99 }}
+    >
       <div className="flex flex-col justify-between">
-        <span className="text-3xl font-medium">{post.title}</span>
-        <span className="text-zinc-700 text-base ">{post.content}</span>
+        <div className="flex items-center relative">
+          <MotionSpan variants={PostTitleArrowVariants} className="absolute">
+            <ChevronRight color="#93C673" />
+          </MotionSpan>
+          <MotionSpan
+            variants={PostTitleVariants}
+            className="text-3xl font-medium"
+          >
+            {post.title}
+          </MotionSpan>
+        </div>
+        <span className="text-zinc-700 text-base">{post.content}</span>
         <div className="flex gap-5">
           <span className="text-zinc-400">
             {dayjs(post.created_at).format("YYYY년 MM월 DD일")}
           </span>
+
           <Badge variant={"red"}>React</Badge>
         </div>
       </div>
-    </PostContainer>
+    </MotionLink>
   );
 }
 

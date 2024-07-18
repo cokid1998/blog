@@ -9,7 +9,7 @@ const PostList = async () => {
   return (
     <>
       {data.map((post) => {
-        return <PostItem post={post} />;
+        return <PostItem key={post.id} post={post} />;
       })}
     </>
   );

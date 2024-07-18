@@ -1,19 +1,15 @@
-import Image from "next/image";
-import {
-  HeaderContainer,
-  LogoLink,
-} from "@src/components/Common/Header/Header.styled";
-import Search from "@src/components/Common/Header/Search/Search";
+import { HeaderContainer } from "@src/components/Common/Header/Header.styled";
 import Menus from "@src/components/Common/Header/Menus/Menus";
-import LogoImage from "@public/logo.png";
+import Link from "next/link";
 
 export default function Header() {
   return (
     <HeaderContainer>
       <div className="container flex justify-between items-center">
-        <LogoLink href={"/"}>
-          <Image src={LogoImage} alt="logo" width={70} height={70} />
-        </LogoLink>
+        <Link href={"/"}>
+          <span className="text-[#93C673]">cokid</span>
+          <span>.Dev.Story</span>
+        </Link>
         <Menus />
       </div>
     </HeaderContainer>

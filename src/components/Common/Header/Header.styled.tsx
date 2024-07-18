@@ -12,9 +12,3 @@ export const HeaderContainer = tw.header`
   z-50
   mb-[20px]
 `;
-
-export const LogoLink = tw(Link)`
-  text-5xl
-  rounded-full
-  overflow-hidden
-`;
