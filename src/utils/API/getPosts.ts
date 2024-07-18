@@ -7,7 +7,8 @@ const supabase = createClient();
 export const getPosts = async () => {
   const { data }: PostgrestResponse<PostsType> = await supabase
     .from("post")
-    .select();
+    .select()
+    .order("created_at", { ascending: false });
 
   return data;
 };
