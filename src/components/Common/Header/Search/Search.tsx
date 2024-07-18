@@ -8,10 +8,7 @@ const Search = () => {
       <SearchIcon />
       <span className="flex-auto">Quick search...</span>
       <div className="font-sans font-semibold dark:text-slate-500">
-        <abbr
-          title="Command"
-          className="no-underline text-slate-300 dark:text-slate-500"
-        >
+        <abbr title="Command" className="no-underline dark:text-slate-500">
           ⌘
         </abbr>{" "}
         K

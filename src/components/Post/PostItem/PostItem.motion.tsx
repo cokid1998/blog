@@ -4,7 +4,6 @@ import Link from "next/link";
 
 export const PostTitleVariants = {
   init: {
-    color: "grey",
     x: 0,
     transition: {
       duration: 0.2,
@@ -13,7 +12,7 @@ export const PostTitleVariants = {
     },
   },
   hover: {
-    color: "#93C673",
+    color: "#22C564",
     x: 30,
     transition: {
       duration: 0.2,

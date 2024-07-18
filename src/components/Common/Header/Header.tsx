@@ -6,8 +6,8 @@ export default function Header() {
   return (
     <HeaderContainer>
       <div className="container flex justify-between items-center">
-        <Link href={"/"}>
-          <span className="text-[#93C673]">cokid</span>
+        <Link href={"/"} className="text-xl">
+          <span className="text-[#22C564]">Cokid</span>
           <span>.Dev.Story</span>
         </Link>
         <Menus />
