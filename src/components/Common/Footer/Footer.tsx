@@ -61,7 +61,7 @@ export default function Footer() {
         <span className="text-[#c0c0c5]">© 2024 Cokid</span>
         <MotionDiv
           initial={{ opacity: 0, scale: 0.5, fill: "#000" }}
-          animate={{ opacity: 1, scale: 1, fill: "#FFA500" }} // 색상을 오렌지로 변경
+          animate={{ opacity: 1, scale: 1, fill: "#FFA501" }} // 색상을 오렌지로 변경
           transition={{ duration: 1 }}
           style={{ display: "inline-block" }} // 아이콘을 감싸는 div에 인라인 블록 스타일을 추가
         >
