@@ -1,9 +1,8 @@
-import Link from "next/link";
-import { BriefcaseBusiness, Sun } from "lucide-react";
+import { BriefcaseBusiness } from "lucide-react";
 import {
   MotionSvg,
   MotionPath,
-  PostTitleVariants,
+  FooterIconVariants,
   MotionLink,
   MotionDiv,
 } from "@src/components/Common/Footer/Footer.motion";
@@ -16,9 +15,10 @@ const Icon = {
         height="24"
         viewBox="0 0 1024 1024"
         xmlns="http://www.w3.org/2000/svg"
+        fill="#c0c0c5"
         initial="init"
         whileHover="hover"
-        variants={PostTitleVariants}
+        variants={FooterIconVariants}
       >
         <MotionPath
           fill-rule="evenodd"
@@ -28,7 +28,7 @@ const Icon = {
           fill="#c0c0c5"
           initial="init"
           whileHover="hover"
-          variants={PostTitleVariants}
+          variants={FooterIconVariants}
         />
       </MotionSvg>
     );
@@ -37,15 +37,10 @@ const Icon = {
 
 export default function Footer() {
   return (
-    <footer className="py-[14px] px-[16]px bg-[#292d3e]">
-      <div className="flex flex-col max-w-[768px] m-auto">
+    <footer className="py-[20px] px-[16]px bg-[#292d3e]">
+      <div className="flex flex-col max-w-[1280px] m-auto gap-[12px]">
         <div className="flex gap-[10px]">
-          <MotionLink
-            href={"https://github.com/cokid1998"}
-            initial="init"
-            whileHover="hover"
-            variants={PostTitleVariants}
-          >
+          <MotionLink href={"https://github.com/cokid1998"}>
             <Icon.github />
           </MotionLink>
           {/* Todo: 포트폴리오 홈페이지 주소 링크 */}
@@ -53,20 +48,13 @@ export default function Footer() {
             href={"/"}
             initial="init"
             whileHover="hover"
-            variants={PostTitleVariants}
+            variants={FooterIconVariants}
           >
-            <BriefcaseBusiness />
+            <BriefcaseBusiness color="#c0c0c5" />
           </MotionLink>
         </div>
-        <span className="text-[#c0c0c5]">© 2024 Cokid</span>
-        <MotionDiv
-          initial={{ opacity: 0, scale: 0.5, fill: "#000" }}
-          animate={{ opacity: 1, scale: 1, fill: "#FFA501" }} // 색상을 오렌지로 변경
-          transition={{ duration: 1 }}
-          style={{ display: "inline-block" }} // 아이콘을 감싸는 div에 인라인 블록 스타일을 추가
-        >
-          <Sun size={48} />
-        </MotionDiv>
+        <span className="text-[#c0c0c5] text-[12px]">© 2024 Cokid</span>
+        <span className="text-[#c0c0c5] text-[12px]">Cokid.Dev.Story</span>
       </div>
     </footer>
   );

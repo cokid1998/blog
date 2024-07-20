@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Variants } from "framer-motion";
 
-export const PostTitleVariants = {
+export const FooterIconVariants: Variants = {
   init: {
-    fill: "#c0c0c5",
-    color: "#c0c0c5",
+    opacity: 0.6,
     transition: {
       duration: 0.2,
       type: "tween",
@@ -13,8 +13,7 @@ export const PostTitleVariants = {
     },
   },
   hover: {
-    fill: "#22C564",
-    color: "#FFA500",
+    opacity: 1,
     transition: {
       duration: 0.2,
       type: "tween",
