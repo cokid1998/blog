@@ -6,9 +6,6 @@ export const HeaderContainer = tw.header`
   top-0
   backdrop-blur
   py-3
-  flex
-  items-center
-  justify-center
   z-50
   mb-[20px]
 `;
