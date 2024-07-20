@@ -6,6 +6,7 @@ export const HeaderContainer = tw.header`
   top-0
   backdrop-blur
   py-3
+  px-[16px]
   z-50
   mb-[20px]
 `;

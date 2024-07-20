@@ -37,9 +37,9 @@ const Icon = {
 
 export default function Footer() {
   return (
-    <footer className="py-[20px] px-[16]px bg-[#292d3e]">
-      <div className="flex flex-col max-w-[1280px] m-auto gap-[12px]">
-        <div className="flex gap-[10px]">
+    <footer className="py-[20px] px-[16px] bg-[#292d3e]">
+      <div className="flex flex-col max-w-[1280px] m-auto gap-[4px]">
+        <div className="flex gap-[10px] mb-[4px]">
           <MotionLink href={"https://github.com/cokid1998"}>
             <Icon.github />
           </MotionLink>
