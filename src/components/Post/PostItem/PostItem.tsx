@@ -18,7 +18,7 @@ interface PostItemProps {
 function PostItem({ post }: PostItemProps) {
   return (
     <MotionLink
-      href={`/${post.category}/${post.title}`}
+      href={`/${post.category}/${post.id}`}
       className="flex gap-10 rounded-xl p-4"
       initial="init"
       whileHover="hover"

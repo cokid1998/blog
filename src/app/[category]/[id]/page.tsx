@@ -1,5 +1,5 @@
 import { getAllPost } from "@src/utils/API/getAllPost";
-import { getPostByTitle } from "@src/utils/API/getPostByTitle";
+import { getPostById } from "@src/utils/API/getPostById";
 import dayjs from "dayjs";
 
 export async function generateStaticParams() {
@@ -9,23 +9,26 @@ export async function generateStaticParams() {
     console.error(error);
     return [];
   }
-  console.log(posts);
-  return posts!.map(({ title, category }) => ({
+
+  return posts!.map(({ id, category }) => ({
     category,
-    title,
+    id: id.toString(),
   }));
 }
+
 interface PostProps {
   id: string;
-  title: string;
+  category: string;
 }
+
 async function page({ params }: { params: PostProps }) {
-  const { title, id } = params;
-  const { data, error } = await getPostByTitle(decodeURIComponent(title));
-  const { category, content, created_at } = data!;
+  const { category, id } = params;
+  const { data, error } = await getPostById(id);
+  const { content, created_at, title } = data!;
+
   return (
     <>
-      <div>{decodeURIComponent(title)}</div>
+      <div>{title}</div>
       <div>{id}</div>
       <div>{category}</div>
       <div>{content}</div>
