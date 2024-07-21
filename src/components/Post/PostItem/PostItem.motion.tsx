@@ -23,14 +23,14 @@ export const PostTitleVariants = {
 };
 export const PostContainerVariants = {
   init: {
-    backgroundColor: "transparent",
+    backgroundColor: "rgba(255, 255, 255, 0)",
     transition: {
       duration: 0.2,
       ease: "easeIn",
     },
   },
   hover: {
-    backgroundColor: "#F7F9FB",
+    backgroundColor: "rgba(247, 249, 251, 1)",
     transition: {
       duration: 0.2,
       ease: "easeOut",

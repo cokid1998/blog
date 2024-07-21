@@ -1,8 +1,8 @@
-import { getPosts } from "@src/utils/API/getPosts";
+import { getAllPost } from "@src/utils/API/getAllPost";
 import PostItem from "@src/components/Post/PostItem/PostItem";
 
 const PostList = async () => {
-  const data = await getPosts();
+  const { data } = await getAllPost();
 
   if (!data) return null;
 

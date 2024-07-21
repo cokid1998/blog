@@ -3,4 +3,5 @@ export interface PostsType {
   created_at: Date;
   title: string;
   content: string;
+  category: string;
 }
