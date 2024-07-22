@@ -1,6 +1,7 @@
 import { getAllPost } from "@src/utils/API/getAllPost";
 import { getPostById } from "@src/utils/API/getPostById";
 import dayjs from "dayjs";
+import styles from "@src/app/[category]/[id]/MDXPost.module.scss";
 
 export async function generateStaticParams() {
   const { data: posts, error } = await getAllPost();
@@ -31,7 +32,7 @@ async function page({ params }: { params: PostProps }) {
       <div>{title}</div>
       <div>{id}</div>
       <div>{category}</div>
-      <div>{content}</div>
+      <section className={styles.mdx__formatter}>{content}</section>
       <div> {dayjs(created_at).format("YYYY년 MM월 DD일")}</div>
     </>
   );
