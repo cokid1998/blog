@@ -15,6 +15,19 @@ interface PostItemProps {
   post: PostsType;
 }
 
+const switchBadgeVariants = (category: string) => {
+  switch (category) {
+    case "NEXT.JS":
+      return "NEXT";
+    case "FRONT-END":
+      return "FRONTEND";
+    case "REACT":
+      return "REACT";
+    default:
+      "default";
+  }
+};
+
 function PostItem({ post }: PostItemProps) {
   return (
     <MotionLink
@@ -45,7 +58,9 @@ function PostItem({ post }: PostItemProps) {
             {dayjs(post.created_at).format("YYYY년 MM월 DD일")}
           </span>
 
-          <Badge variant={"red"}>React</Badge>
+          <Badge variant={switchBadgeVariants(post.category)}>
+            {post.category}
+          </Badge>
         </div>
       </div>
     </MotionLink>
