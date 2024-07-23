@@ -1,26 +1,50 @@
 "use client";
 import MDEditor from "@uiw/react-md-editor";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@src/components/ui/input";
 import { Button } from "@src/components/ui/button";
 import { useToast } from "@src/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { posting } from "@src/utils/API/posting";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@src/components/ui/select";
+import { getCategories } from "@src/utils/API/getCategories";
+import { CategoryType } from "@src/types/categoryType";
 
 const edit = () => {
   const router = useRouter();
   const { toast } = useToast();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState<string | undefined>("# Hello World");
+  const [categories, setCategories] = useState<CategoryType[]>([]);
+  const [selectCategory, setSelectCategory] = useState("");
+
+  useEffect(() => {
+    const fetch = async () => {
+      const { category, error } = await getCategories();
+      if (error) {
+        alert("카테고리 fetch 에러발생 콘솔창 확인");
+        console.log(error);
+      } else {
+        setCategories(category!);
+      }
+    };
+    fetch();
+  }, []);
 
   const onSubmit = async () => {
-    if (!title || !content) {
+    if (!title || !content || !selectCategory) {
       toast({
         title: "기입되지 않은 데이터(값)가 있습니다.",
-        description: "제목, 콘텐츠를 모두 작성해주세요.",
+        description: "제목, 콘텐츠, 카테고리를 모두 작성해주세요.",
       });
     } else {
-      const { error, status } = await posting(title, content);
+      const { error, status } = await posting(title, content, selectCategory);
       if (error) {
         console.log(error);
         toast({
@@ -37,6 +61,10 @@ const edit = () => {
     }
   };
 
+  const handleCategory = (value: string) => {
+    setSelectCategory(value);
+  };
+
   return (
     <div className="w-full flex flex-col gap-4">
       <Input
@@ -45,6 +73,20 @@ const edit = () => {
         className="h-12 text-2xl"
         onChange={(e) => setTitle(e.target.value)}
       />
+      <Select onValueChange={handleCategory}>
+        <SelectTrigger className="w-full">
+          <SelectValue placeholder="Select Category!" />
+        </SelectTrigger>
+        <SelectContent>
+          {categories.map(({ id, category }) => {
+            return (
+              <SelectItem key={id} value={category}>
+                {category}
+              </SelectItem>
+            );
+          })}
+        </SelectContent>
+      </Select>
       <MDEditor
         height={700}
         value={content}

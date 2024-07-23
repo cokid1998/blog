@@ -1,10 +1,14 @@
 import { createClient } from "@src/utils/supabase/client";
 
 const supabase = createClient();
-export const posting = async (title: string, content: string) => {
+export const posting = async (
+  title: string,
+  content: string,
+  category: string
+) => {
   const { data, error, status } = await supabase
     .from("post")
-    .insert([{ title, content }])
+    .insert([{ title, content, category }])
     .select();
 
   return { data, error, status };

@@ -18,9 +18,9 @@ const PostList = () => {
   if (!posts.length) {
     return (
       <>
-        {Array.from({ length: 6 }).map(() => {
+        {Array.from({ length: 6 }).map((_, index) => {
           return (
-            <div className="flex flex-col gap-5 w-full">
+            <div key={index} className="flex flex-col gap-5 w-full">
               <div className="flex items-center space-x-4 h-[124px]">
                 <div className="space-y-4 w-full">
                   <Skeleton className="h-4 w-[100px]" />
