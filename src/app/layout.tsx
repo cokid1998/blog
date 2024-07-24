@@ -3,8 +3,6 @@ import "./globals.css";
 import { Toaster } from "@src/components/ui/toaster";
 import Header from "@src/components/Common/Header/Header";
 import Footer from "@src/components/Common/Footer/Footer";
-import Search from "@src/components/Common/Header/Search/Search";
-import Category from "@src/components/Category/Category";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -27,8 +25,6 @@ export default function RootLayout({
         <Header />
         <main className="w-full">
           <div className="m-auto max-w-[768px] flex flex-col items-center">
-            <Search />
-            <Category />
             {children}
             <Toaster />
           </div>

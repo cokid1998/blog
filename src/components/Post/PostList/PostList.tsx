@@ -4,6 +4,8 @@ import PostItem from "@src/components/Post/PostItem/PostItem";
 import { useEffect, useState } from "react";
 import { PostsType } from "@src/types/postType";
 import { Skeleton } from "@src/components/ui/skeleton";
+import Search from "@src/components/Common/Header/Search/Search";
+import Category from "@src/components/Category/Category";
 
 const PostList = () => {
   const [posts, setPosts] = useState<PostsType[]>([]);
@@ -37,6 +39,8 @@ const PostList = () => {
 
   return (
     <>
+      <Search />
+      <Category />
       {posts.map((post) => {
         return <PostItem key={post.id} post={post} />;
       })}
