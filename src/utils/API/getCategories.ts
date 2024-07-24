@@ -4,11 +4,11 @@ import { CategoryType } from "@src/types/categoryType";
 const supabase = createClient();
 
 export const getCategories = async () => {
-  const { data: category, error }: PostgrestResponse<CategoryType> =
+  const { data: categories, error }: PostgrestResponse<CategoryType> =
     await supabase.from("category").select("*");
 
   return {
-    category,
+    categories,
     error,
   };
 };

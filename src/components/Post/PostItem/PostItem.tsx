@@ -10,23 +10,11 @@ import {
   PostTitleArrowVariants,
 } from "@src/components/Post/PostItem/PostItem.motion";
 import { ChevronRight } from "lucide-react";
+import { switchBadgeVariants } from "@src/utils/switchBadgeVariants";
 
 interface PostItemProps {
   post: PostsType;
 }
-
-const switchBadgeVariants = (category: string) => {
-  switch (category) {
-    case "NEXT.JS":
-      return "NEXT";
-    case "FRONT-END":
-      return "FRONTEND";
-    case "REACT":
-      return "REACT";
-    default:
-      "default";
-  }
-};
 
 function PostItem({ post }: PostItemProps) {
   return (

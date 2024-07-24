@@ -26,12 +26,12 @@ const edit = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const { category, error } = await getCategories();
+      const { categories, error } = await getCategories();
       if (error) {
         alert("카테고리 fetch 에러발생 콘솔창 확인");
         console.log(error);
       } else {
-        setCategories(category!);
+        setCategories(categories!);
       }
     };
     fetch();
