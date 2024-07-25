@@ -14,14 +14,19 @@ const badgeVariants = cva(
       variant: {
         default:
           "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        destructive:
-          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
-        outline: "text-foreground",
         REACT: "border-transparent bg-[#61DAFB] text-primary-foreground",
         NEXT: "border-transparent bg-[#000000] text-primary-foreground",
         FRONTEND: "border-transparent bg-[#4169E1] text-primary-foreground",
+
+        categoryReact:
+          "border-transparent bg-[#61DAFB] text-primary-foreground px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
+        categoryNext:
+          "border-transparent bg-[#000000] text-primary-foreground px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
+        categoryFrontEnd:
+          "border-transparent bg-[#4169E1] text-primary-foreground px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
+        ALL: "px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover font-bold bg-slate-300 dark:bg-neutral-500",
+        disable:
+          "px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover font-semibold text-neutral-400 bg-slate-200 dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
       } as VariantType,
     },
     defaultVariants: {

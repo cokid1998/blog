@@ -13,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@src/components/ui/select";
-import { getCategories } from "@src/utils/API/getCategories";
+import { getCategories } from "@src/utils/API/getAllCategories";
 import { CategoryType } from "@src/types/categoryType";
 
 const edit = () => {
