@@ -24,7 +24,7 @@ const badgeVariants = cva(
           "border-transparent bg-[#000000] text-primary-foreground px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
         categoryFrontEnd:
           "border-transparent bg-[#4169E1] text-primary-foreground px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
-        ALL: "px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover font-bold bg-slate-300 dark:bg-neutral-500",
+        ALL: "px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover font-bold bg-slate-300 dark:bg-neutral-500 cursor-pointer",
         disable:
           "px-4 py-1 text-xs whitespace-pre duration-300 rounded-xl md:text-sm transition-backgroundColor btn-hover font-semibold text-neutral-400 bg-slate-200 dark:bg-neutral-700 dark:text-neutral-400 cursor-pointer",
       } as VariantType,
