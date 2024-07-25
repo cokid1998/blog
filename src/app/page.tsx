@@ -7,7 +7,7 @@ export default async function Index() {
   const { categories, error } = await getCategories();
   categories!.unshift({ id: 0, category: "ALL" });
   return (
-    <div className="flex flex-col gap-5 w-full">
+    <div className="flex flex-col gap-5 w-full pb-[32px] min-h-[calc(100vh-184px)]	">
       <Search />
       <Category categories={categories!} />
       <PostList />
