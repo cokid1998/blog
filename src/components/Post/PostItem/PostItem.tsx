@@ -11,6 +11,7 @@ import {
 } from "@src/components/Post/PostItem/PostItem.motion";
 import { ChevronRight } from "lucide-react";
 import { switchBadgeVariants } from "@src/utils/switchBadgeVariants";
+import { getPostPreviewDescription } from "@src/utils/getPostPreviewDescription";
 
 interface PostItemProps {
   post: PostsType;
@@ -39,7 +40,7 @@ function PostItem({ post }: PostItemProps) {
           </MotionSpan>
         </div>
         <span className="text-zinc-700 text-base opacity-80">
-          {post.content}
+          {getPostPreviewDescription(post.content)}
         </span>
         <div className="flex gap-5">
           <span className="text-zinc-400 opacity-80">
