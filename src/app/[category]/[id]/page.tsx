@@ -1,8 +1,5 @@
 import dayjs from "dayjs";
 import styles from "@src/app/[category]/[id]/MDXPost.module.scss";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkHtml from "remark-html";
 
 export async function generateStaticParams() {}
 

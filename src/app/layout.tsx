@@ -3,7 +3,6 @@ import "./globals.css";
 import { Toaster } from "@src/components/ui/toaster";
 import Header from "@src/components/Common/Header/Header";
 import Footer from "@src/components/Common/Footer/Footer";
-import CategoryProvider from "@src/context/CategoryContext";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -23,16 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <body>
-        <CategoryProvider>
-          <Header />
-          <main className="w-full">
-            <div className="m-auto max-w-[768px] flex flex-col items-center">
-              {children}
-              <Toaster />
-            </div>
-          </main>
-          <Footer />
-        </CategoryProvider>
+        <Header />
+        <main className="w-full">
+          <div className="m-auto max-w-[768px] flex flex-col items-center">
+            {children}
+            <Toaster />
+          </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
