@@ -1,12 +1,10 @@
 "use client";
-import { getAllPost } from "@src/utils/API/getAllPost";
 import PostItem from "@src/components/Post/PostItem/PostItem";
 import { useEffect, useState } from "react";
 import { PostsType } from "@src/types/postType";
 import { Skeleton } from "@src/components/ui/skeleton";
 import { useContext } from "react";
 import { CategoryContext } from "@src/context/CategoryContext";
-import { getSelectCategoryPosts } from "@src/utils/API/getSelectCategoryPosts";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
@@ -14,22 +12,6 @@ import remarkHtml from "remark-html";
 const PostList = () => {
   const [posts, setPosts] = useState<PostsType[]>([]);
   const { selectCategory } = useContext(CategoryContext);
-
-  useEffect(() => {
-    if (selectCategory === "ALL") {
-      const fetchAllCategories = async () => {
-        const { data: posts } = await getAllPost();
-        setPosts(posts!);
-      };
-      fetchAllCategories();
-    } else {
-      const fetchSelectCategory = async () => {
-        const { data, error } = await getSelectCategoryPosts(selectCategory);
-        setPosts(data!);
-      };
-      fetchSelectCategory();
-    }
-  }, [selectCategory]);
 
   if (!posts.length) {
     return (

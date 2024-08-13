@@ -10,8 +10,6 @@ import {
   PostTitleArrowVariants,
 } from "@src/components/Post/PostItem/PostItem.motion";
 import { ChevronRight } from "lucide-react";
-import { switchBadgeVariants } from "@src/utils/switchBadgeVariants";
-import { getPostPreviewDescription } from "@src/utils/getPostPreviewDescription";
 
 interface PostItemProps {
   post: PostsType;
