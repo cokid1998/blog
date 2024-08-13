@@ -1,5 +1,4 @@
 import React from "react";
-import { PostsType } from "@src/types/postType";
 import dayjs from "dayjs";
 import { Badge } from "@src/components/ui/badge";
 import {
@@ -10,22 +9,26 @@ import {
   PostTitleArrowVariants,
 } from "@src/components/Post/PostItem/PostItem.motion";
 import { ChevronRight } from "lucide-react";
+import { PostPreviewType } from "@src/types/postPreviewType";
 
 interface PostItemProps {
-  post: PostsType;
+  post: PostPreviewType;
 }
 
 function PostItem({ post }: PostItemProps) {
+  const { title, date, desc, tags, slug } = post;
+  console.log(tags);
+
   return (
     <MotionLink
-      href={`/${post.category}/${post.id}`}
+      href={`/${slug}`}
       className="flex gap-10 rounded-xl p-4"
       initial="init"
       whileHover="hover"
       variants={PostContainerVariants}
       whileTap={{ scale: 0.99 }}
     >
-      <div className="flex flex-col justify-between gap-1">
+      <div className="flex flex-col justify-between gap-[12px]">
         <div className="flex items-center relative">
           <MotionSpan variants={PostTitleArrowVariants} className="absolute">
             <ChevronRight color="#22C564" />
@@ -34,20 +37,19 @@ function PostItem({ post }: PostItemProps) {
             variants={PostTitleVariants}
             className="text-3xl font-medium"
           >
-            {post.title}
+            {title}
           </MotionSpan>
         </div>
-        <span className="text-zinc-700 text-base opacity-80">
-          {getPostPreviewDescription(post.content)}
-        </span>
+        <span className="text-zinc-700 text-base opacity-80">{desc}</span>
         <div className="flex gap-5">
           <span className="text-zinc-400 opacity-80">
-            {dayjs(post.created_at).format("YYYY년 MM월 DD일")}
+            {dayjs(date).format("YYYY년 MM월 DD일")}
           </span>
-
-          <Badge variant={switchBadgeVariants(post.category)}>
-            {post.category}
-          </Badge>
+          {tags.map((tag, index) => (
+            <Badge key={index} variant={tag}>
+              {tag}
+            </Badge>
+          ))}
         </div>
       </div>
     </MotionLink>
