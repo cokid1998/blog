@@ -5,10 +5,11 @@ import matter from "gray-matter";
 import getPostMetadata from "@src/utils/getPostMetadata";
 import Markdown from "markdown-to-jsx";
 import { Badge } from "@src/components/ui/badge";
+import path from "path";
 
 const getPostContent = (slug: string) => {
-  const folder = "posts/";
-  const file = folder + `${slug}.md`;
+  let folder = path.join(process.cwd(), "/posts");
+  let file = path.join(folder, `${slug}.md`);
   const content = readFileSync(file, "utf8");
   const result = matter(content);
   return result;
