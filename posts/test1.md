@@ -2,7 +2,7 @@
 title: Ant Design 테마 커스터마이징 뿌시기(ConfigProvider)
 date: 2024-01-13 13:21:00
 desc: 내 멘탈을 붕괴시킨 디자인 시스템 테마 커스텀, 어떻게 헤쳐나갔나?
-tags: [NEXT]
+tags: [REACT, NEXT]
 ---
 
 ## 들어가며
@@ -41,10 +41,6 @@ Ant.D 에는 **Seed Token, Map Token, Alias Token,** 세 개의 계층으로 토
 
 Ant.D에서 문서에서 이들의 라이프 사이클을 보여주는 사진을 가져왔으니 참고하면 좋을 것 같다.
 
-<img
-  src="/posts/antd-customize-theme-1.png"
-  alt="Ant Design - Life of Design Token"
-/>
 <em>Ant Design - Life of Design Token</em>
 
 ## 2. 테마 커스터마이징 준비
@@ -103,11 +99,9 @@ const theme = {
 - 특히 컴포넌트 탭에서 각 컴포넌트가 사용한 토큰(글로벌/컴포넌트)을 변경하면서 확인할 수 있다.
 - `Comp` 태그가 붙은 토큰은 해당 컴포넌트에서만 사용할 수 있는 특수 토큰이다.
 - 태그가 없는 토큰은 Global 토큰을 해당 컴포넌트에서만 변경할 수 있는 토큰이다.
-  <img
-    src="/posts/antd-customize-theme-2.png"
-    alt="Ant Design - Theme Editor"
-  />
+
   <em>Ant Design - Theme Editor</em>
+
 - **테마 에디터 단점**:
   - 에디터에 예제 적어서 개발, 디자인팀 모두 특정 토큰이 어디에 사용되는지 확인이 어려움
   - 글로벌 토큰을 사용하고 있지만, 목록에는 없는 경우가 있어 추측으로 테스트해야하는 경우도 있다.
@@ -302,7 +296,6 @@ export default Component;
 
 개발자 도구로 살펴본 앤트디자인의 svg 코드를 살펴보자.
 
-<img src="/posts/antd-customize-theme-3.png" alt="Ant Desig SVG Code" />
 <em>Ant Desig SVG Code</em>
 
 - svg 태그의 `width` 와 `height` 속성이 **1em** 값을 갖는 것을 확인할 수 있다.

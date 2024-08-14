@@ -8,7 +8,7 @@ import { Badge } from "@src/components/ui/badge";
 
 const getPostContent = (slug: string) => {
   const folder = "posts/";
-  const file = folder + `${slug}.mdx`;
+  const file = folder + `${slug}.md`;
   const content = readFileSync(file, "utf8");
   const result = matter(content);
   return result;
@@ -27,7 +27,7 @@ export async function generateStaticParams() {
 // }
 
 async function page({ params }: { params: { slug: string } }) {
-  const mdx = getPostContent(params.slug);
+  const md = getPostContent(params.slug);
   const posts = getPostMetadata("posts");
   const postMetaData = posts.filter((post) => post.slug === params.slug)[0];
 
@@ -48,7 +48,7 @@ async function page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-      <Markdown className={styles.mdx__formatter}>{mdx.content}</Markdown>
+      <Markdown className={styles.md__formatter}>{md.content}</Markdown>
     </>
   );
 }

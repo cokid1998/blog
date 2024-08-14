@@ -17,7 +17,6 @@ interface PostItemProps {
 
 function PostItem({ post }: PostItemProps) {
   const { title, date, desc, tags, slug } = post;
-  console.log(tags);
 
   return (
     <MotionLink
@@ -35,7 +34,7 @@ function PostItem({ post }: PostItemProps) {
           </MotionSpan>
           <MotionSpan
             variants={PostTitleVariants}
-            className="text-3xl font-medium"
+            className="text-[26px] font-medium"
           >
             {title}
           </MotionSpan>
