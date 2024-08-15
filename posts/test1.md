@@ -1,6 +1,6 @@
 ---
 title: Ant Design 테마 커스터마이징 뿌시기(ConfigProvider)
-date: 2024-01-13 13:21:00
+date: 2024-01-13
 desc: 내 멘탈을 붕괴시킨 디자인 시스템 테마 커스텀, 어떻게 헤쳐나갔나?
 tags: [REACT, NEXT]
 ---

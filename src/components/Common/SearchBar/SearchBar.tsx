@@ -1,10 +1,10 @@
 "use client";
+import { Dispatch, useState, SetStateAction } from "react";
 import { Search as SearchIcon } from "lucide-react";
-import { Dispatch, useState } from "react";
 
 interface SearchBarProps {
   searchValue: string;
-  setSearchValue: Dispatch<React.SetStateAction<string>>;
+  setSearchValue: Dispatch<SetStateAction<string>>;
 }
 
 const SearchBar = ({ searchValue, setSearchValue }: SearchBarProps) => {

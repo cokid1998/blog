@@ -7,7 +7,7 @@ export default function Header() {
     <HeaderContainer>
       <div className="flex justify-between items-center max-w-[1280px] m-auto">
         <Link href={"/"} className="text-xl">
-          <span className="text-[#22C564]">Cokid</span>
+          <span className="text-[#22C564] font-medium">Cokid</span>
           <span>.Dev.Story</span>
         </Link>
         <Menus />
