@@ -31,7 +31,6 @@ async function page({ params }: { params: { slug: string } }) {
   const md = getPostContent(params.slug);
   const posts = getPostMetadata("posts");
   const postMetaData = posts.filter((post) => post.slug === params.slug)[0];
-  console.log(postMetaData.date);
 
   return (
     <>

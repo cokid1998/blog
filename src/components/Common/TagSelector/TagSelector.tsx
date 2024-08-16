@@ -16,7 +16,7 @@ function TagSelector({ tags }: TagSelectorProps) {
       </div>
       <Separator orientation="vertical" className="h-[24px] w-[2px]" />
       {tags.map((tag) => (
-        <Badge key={tag} variant={tag}>
+        <Badge key={tag} variant={"enable"}>
           {tag}
         </Badge>
       ))}
